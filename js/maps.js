@@ -3,11 +3,11 @@ $(document).ready(function(){
 
 	var map;
   	var buses; //list of buses currently running
-  	var savedGeoCodes=[]; //list of text to lat/lng translated locations 
   	var destination; //destination of user
-  	var location; //current location of user
   	var currentLocation;
   	var busMarkers =[]; //all the bus markers on the map 
+  	var directionsList = []; //list of directions searched on the map
+  	var recentPlaces = [] // store the recent geocoded routes last searched by the user
 
   	
   	
@@ -30,7 +30,6 @@ $(document).ready(function(){
 		
 			// Get the user's current position
 			navigator.geolocation.getCurrentPosition(success, error);
-			//console.log(pos.latitude + " " + pos.longitude);
 	} else {
 		alert('Geolocation is not supported in your browser');
 	}
@@ -84,27 +83,42 @@ $(document).ready(function(){
 		var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
 		var directionsService = new google.maps.DirectionsService();
 		// Set destination, origin and travel mode.
-		var request = {  //remember to change the location and dest when submitted/find route
+		var request = {
 		destination: dest,
 		origin:currentLocation,
 		travelMode: google.maps.TravelMode.TRANSIT
 		};
 
-		// Pass the directions request to the directions service.
+		clearMap = function(){
 
+			busMarkers.forEach(function(marker){
+				marker.setMap(null);
+			})
+
+			busMarkers = [];
+
+			directionsList.forEach(function(direction){
+				direction.set('directions', null);
+			})
+
+			directionsList = [];
+
+		}
+		
+		clearMap();
+		
+		// Pass the directions request to the directions service.
 		//ajax call to get directions
 		directionsService.route(request, function(response, status) {
 			if (status == google.maps.DirectionsStatus.OK) {
 			  // Display the route on the map.
-			  console.log(response)
 			  directionsDisplay.setDirections(response);
-			  //returns the bus num of the bus currently working on that route
+			  directionsList.push(directionsDisplay);
 
 			  var steps = directionsDisplay.getDirections().routes[0].legs[0].steps;
 			  steps.forEach(function(step){
 			  	if(step.travel_mode == "TRANSIT"){
 			  		routeBuses.push(step.transit.line.short_name);
-			  		console.log(routeBuses)
 			  	}
 			  })
 			  assignMarkers(routeBuses);
@@ -113,32 +127,37 @@ $(document).ready(function(){
 			}
 
 		});
-
-		clearMap = function(){
-
-		busMarkers.forEach(function(marker){
-			marker.setMap(null);
-		})
-
-		busMarkers = [];
-
-	 directionsDisplay.setMap(null);
-	}
 	}
 
 	geocodeAddress = function() {
 		var geocoder = new google.maps.Geocoder();
-		location = $("#locInput").val();
-		destination = document.getElementById("destInput").value;
-		  geocoder.geocode({'address':destination}, function(results, status) {
+		var cached = false
+		var index;
+		destination = document.getElementById("destInput").value.toUpperCase();
+
+		for(var i =0;i<recentPlaces.length;i++){
+			if(recentPlaces[i].name ==destination){
+				cached = true;
+				index = i;
+				break;
+			}
+		}
+
+		if(cached){ //if the location is cached then it will be retrieved instead of using the geocoding service
+			getDirections(recentPlaces[i].location);
+		}else{
+
+			geocoder.geocode({'address':destination}, function(results, status) {
 		    if (status === google.maps.GeocoderStatus.OK) {
-				console.log(location);
+		    	recentPlaces.push({"name": destination, "location":results[0].geometry.location})
 		    	getDirections(results[0].geometry.location); 
 
 		    } else {
 		      alert('Geocode was not successful for the following reason: ' + status);
 		    }
 		  });
+		}
+		  
 	}
 	
 
