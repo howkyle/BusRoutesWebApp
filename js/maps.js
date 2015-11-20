@@ -7,6 +7,7 @@ $(document).ready(function(){
   	var destination; //destination of user
   	var location; //current location of user
   	var currentLocation;
+  	var busMarkers =[]; //all the bus markers on the map 
 
   	
   	
@@ -64,10 +65,10 @@ $(document).ready(function(){
 				var marker = new google.maps.Marker({
 			    map: map,
 			    position: bus.location,
-			    title: bus.busID+ " "+bus.route.routeNum
+			    title: "Bus ID: "+bus.busID+ " Route Number"+bus.route.routeNum
   			   });
-
-			}
+				busMarkers.push(marker);
+			}	
 
 			})
 			
@@ -79,8 +80,9 @@ $(document).ready(function(){
 	var getDirections = function(dest){ //runs when find routes button is clicked
 		
 
+		var routeBuses= []; //bus number currently running on that route
 		var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-		
+		var directionsService = new google.maps.DirectionsService();
 		// Set destination, origin and travel mode.
 		var request = {  //remember to change the location and dest when submitted/find route
 		destination: dest,
@@ -88,10 +90,7 @@ $(document).ready(function(){
 		travelMode: google.maps.TravelMode.TRANSIT
 		};
 
-		var routeBuses= []; //bus number currently running on that route
-
 		// Pass the directions request to the directions service.
-		var directionsService = new google.maps.DirectionsService();
 
 		//ajax call to get directions
 		directionsService.route(request, function(response, status) {
@@ -114,6 +113,17 @@ $(document).ready(function(){
 			}
 
 		});
+
+		clearMap = function(){
+
+		busMarkers.forEach(function(marker){
+			marker.setMap(null);
+		})
+
+		busMarkers = [];
+
+	 directionsDisplay.setMap(null);
+	}
 	}
 
 	geocodeAddress = function() {
