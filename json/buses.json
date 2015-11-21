@@ -69,7 +69,69 @@
 		"driverName":"",
 		"route":{"routeNum": "72", "routeName":"August Town to HWT via Mona Rd and Hope Road "},
 		"busStatus":"1"
+	},
+	{
+		"busID":"0011",
+		"location":{"lat":18.008662, "lng":-76.807369},
+		"driverName":"",
+		"route":{"routeNum": "50", "routeName":"Seaview to HWT via Hagley Park"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0012",
+		"location":{"lat":18.003958,"lng": -76.831468},
+		"driverName":"",
+		"route":{"routeNum": "50", "routeName":"Seaview to HWT via Hagley Park"},
+		"busStatus":"2"
+	},
+	{
+		"busID":"0013",
+		"location":{"lat":17.993728,"lng": -76.834848},
+		"driverName":"",
+		"route":{"routeNum": "18", "routeName":"Greater Portmore to City via Hellshire, Portmore toll"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0014",
+		"location":{"lat":17.958749, "lng":-76.890134},
+		"driverName":"",
+		"route":{"routeNum": "18", "routeName":"Greater Portmore to City via Hellshire, Portmore toll"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0015",
+		"location":{"lat":18.009295,"lng": -76.803822},
+		"driverName":"",
+		"route":{"routeNum": "17A", "routeName":"Greater Portmore to HWT via Hellshire, Portmore toll, Hagley park"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0016",
+		"location":{"lat":18.000312, "lng": -76.747142},
+		"driverName":"",
+		"route":{"routeNum": "66", "routeName":"Hermitage to City via South Camp Road, Mona Road"},
+		"busStatus":"2"
+	},
+	{
+		"busID":"0016",
+		"location":{"lat":17.985578, "lng":-76.790876},
+		"driverName":"",
+		"route":{"routeNum": "44", "routeName":"Great House Circle to HWT"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0016",
+		"location":{"lat":18.005818, "":-76.775846},
+		"driverName":"",
+		"route":{"routeNum": "61", "routeName":"Gordon Town to City"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0016",
+		"location":{"lat":17.972495, "lng":-76.844261},
+		"driverName":"",
+		"route":{"routeNum": "18A", "routeName":"Greater Portmore to HWT via Braeton Road, Portmore Toll Road, Hagley Park Road"},
+		"busStatus":"1"
 	}
-
-
 ]
+

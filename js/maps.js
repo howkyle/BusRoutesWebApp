@@ -26,7 +26,9 @@ $(document).ready(function(){
 			
 			function success(pos){
 				currentLocation = {lat: pos.coords.latitude,lng:pos.coords.longitude} ;
+				// currentLocation = {lat:18.005977, lng:-76.751101} //for testing purposes
 				var marker = new google.maps.Marker({
+				icon: "../images/user_icon2.png",
 			    map: map,
 			    position: currentLocation,
 			    title: "I AM HERE"
@@ -50,9 +52,16 @@ $(document).ready(function(){
 
 
 	function initMap() { //initializes the map and centres it on the city of kingston
+		var centre;
+		if(currentLocation != null){
+			centre = currentLocation;
+		}
+		else{
+			centre = {lat: 18.0115495, lng: -76.7980512};
+		}
 	  map = new google.maps.Map(document.getElementById('mapArea'), {
-	    center: {lat: 18.0115495, lng: -76.7980512},
-	    zoom: 15
+	    center: centre,
+	    zoom: 12
 	  });
 
 		var transitLayer = new google.maps.TransitLayer();
@@ -67,9 +76,10 @@ $(document).ready(function(){
 
 				if(bus.route.routeNum == routeBus){
 				var marker = new google.maps.Marker({
+				icon: "../images/bus_icon.png",
 			    map: map,
 			    position: bus.location,
-			    title: "Bus ID: "+bus.busID+ " Route Number"+bus.route.routeNum
+			    title: "Bus ID: "+bus.busID+ " Route Number: "+bus.route.routeNum
   			   });
 				busMarkers.push(marker);
 			}	
@@ -83,11 +93,13 @@ $(document).ready(function(){
 
 	var getDirections = function(dest){ //runs when find routes button is clicked
 		
-		console.log("this function runs")
 		var routeBuses= []; //bus number currently running on that route
 		var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
 		var directionsService = new google.maps.DirectionsService();
 		// Set destination, origin and travel mode.
+
+
+
 		var request = {
 		destination: dest,
 		origin:currentLocation,
@@ -118,14 +130,26 @@ $(document).ready(function(){
 			if (status == google.maps.DirectionsStatus.OK) {
 			  // Display the route on the map.
 			  directionsDisplay.setDirections(response);
+			  console.log(response)
 			  directionsList.push(directionsDisplay);
 
-			  var steps = directionsDisplay.getDirections().routes[0].legs[0].steps;
-			  steps.forEach(function(step){
-			  	if(step.travel_mode == "TRANSIT"){
+			  var routes = directionsDisplay.getDirections().routes;
+			  console.log(routes)
+			  routes.forEach(function(route){
+			  	 var steps =route.legs[0].steps
+			  	 steps.forEach(function(step){
+			  		if(step.travel_mode == "TRANSIT"){
 			  		routeBuses.push(step.transit.line.short_name);
-			  	}
+			  		}
+			 	 })
 			  })
+
+			  // var steps = directionsDisplay.getDirections().routes[0].legs[0].steps;
+			  // steps.forEach(function(step){
+			  // 	if(step.travel_mode == "TRANSIT"){
+			  // 		routeBuses.push(step.transit.line.short_name);
+			  // 	}
+			  // })
 			  assignMarkers(routeBuses);
 			  
 				
@@ -138,6 +162,7 @@ $(document).ready(function(){
 		var geocoder = new google.maps.Geocoder();
 		var cached = false
 		var index;
+
 		destination = document.getElementById("destInput").value.toUpperCase()+" JAMAICA";
 
 		for(var i =0;i<recentPlaces.length;i++){
