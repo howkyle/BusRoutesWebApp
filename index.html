@@ -1,33 +1,45 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<title>google maps test</title>
-
-	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<head>
+		<title>Project Template</title>
+		<link rel="stylesheet" type="text/css" href="styles/style.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/style-big.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/style-small.css"/>
+		
+		<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwFiTByQX6rc4WHQbPhbtv3mfDN7Bq728"></script> 
 	<script  src = "js/maps.js" type="text/javascript"></script>
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<script src="js/setup.js" type="text/javascript"></script>
+	</head>
 	
-</head>
-<body>
-	<div class="header">
+	<body>
 
-	</div>
-	<div id="options">
-		<h1>Options</h1>
-		<div class="search">
-			<h4>Destination</h4>
-			<input id="destInput" type="text" name="destination" placeholder="Enter destination">
-			<button type="submit" onclick ="geocodeAddress()">Find Route</button>
-			<button>Refresh</button>
+		<div id="overall">
+			<!--Header at top of Page-->
+			<div id="header" class="centered vertAlign">
+				<img src="images/searchicon.png" id="searchicon">
+				BUSWEH?
+			</div>
+			
+			<!--Content in middle of page-->
+			<div id="pagecontentbox">
+				<div id="mapArea">
+
+				</div>
+			</div>
+
+			<!--Footer at bottom of Page-->
+			<div id="footer" class="centered vertAlign">FOOTER</div>
+
+			<!--search bar-->
+			<div id="search">				
+					<input id="destInput" type="text" name="destination" placeholder="Enter destination" autofocus>
+					<button type="submit" onclick ="geocodeAddress()">Find Route</button>
+					<button>Refresh</button>
+					<button onclick = "clearMap()">Clear Map</button>
+			</div>
+
 		</div>
-		
-	</div>
-	 <div id="mapArea">
-
-	</div>
-
-
-</body>
+	</body>
 
 </html>
-

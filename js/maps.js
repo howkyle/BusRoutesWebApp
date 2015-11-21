@@ -8,6 +8,12 @@ $(document).ready(function(){
   	var busMarkers =[]; //all the bus markers on the map 
   	var directionsList = []; //list of directions searched on the map
   	var recentPlaces = [] // store the recent geocoded routes last searched by the user
+  	// var recentList = document.createElement("select"); //creates a dropdown list DOM element in html 
+
+  	// recentList.setAttribute("onchange", getDirections(recentList.options[recentList.selectedIndex].value));
+
+  	 // recentList.setAttribute("onchange", getDirections);
+
 
   	
   	
@@ -33,7 +39,6 @@ $(document).ready(function(){
 	} else {
 		alert('Geolocation is not supported in your browser');
 	}
-
 
   	$.getJSON("json/buses.json", doStuff)
 
@@ -78,7 +83,7 @@ $(document).ready(function(){
 
 	var getDirections = function(dest){ //runs when find routes button is clicked
 		
-
+		console.log("this function runs")
 		var routeBuses= []; //bus number currently running on that route
 		var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
 		var directionsService = new google.maps.DirectionsService();
@@ -150,6 +155,7 @@ $(document).ready(function(){
 			geocoder.geocode({'address':destination}, function(results, status) {
 		    if (status === google.maps.GeocoderStatus.OK) {
 		    	recentPlaces.push({"name": destination, "location":results[0].geometry.location})
+		    	// addToList({"name": destination, "location":results[0].geometry.location});
 		    	getDirections(results[0].geometry.location); 
 
 		    } else {
@@ -158,6 +164,14 @@ $(document).ready(function(){
 		  });
 		}
 		  
+	}
+
+	var addToList = function(location){ //adds each new location to a dropdown list 
+		var op = new Option();
+			op.text = location.name;
+			op.value =location.location;
+			recentList.options.add(op);
+		document.getElementById("dropDown").appendChild(recentList);
 	}
 	
 

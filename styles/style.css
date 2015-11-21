@@ -1,0 +1,190 @@
+@font-face {
+    font-family: brushStrokes;
+    src: url('../fonts/brushStrokes.ttf');
+}
+
+@font-face {
+    font-family: olivier;
+    src: url('../fonts/olivier.ttf');
+}
+
+@font-face {
+    font-family: wasted;
+    src: url('../fonts/wasted.otf');
+}
+
+@font-face {
+    font-family: bubbleGum;
+    src: url('../fonts/bubbleGum.ttf');
+}
+
+@font-face {
+    font-family: orangeJuice;
+    src: url('../fonts/orangeJuice.ttf');
+}
+
+@font-face {
+    font-family: photographs;
+    src: url('../fonts/photographs.ttf');
+}
+
+@font-face {
+    font-family: remachineScript;
+    src: url('../fonts/remachineScript.ttf');
+}
+
+@font-face {
+    font-family: robotoBlack;
+    src: url('../fonts/robotoBlack.ttf');
+}
+
+@font-face {
+    font-family: santasSleigh;
+    src: url('../fonts/santasSleigh.ttf');
+}
+
+@font-face {
+    font-family: stone;
+    src: url('../fonts/stone.ttf');
+}
+
+@font-face {
+    font-family: travelingTypewriter;
+    src: url('../fonts/travelingTypewriter.ttf');
+}
+
+@font-face {
+    font-family: worldBlackShadow;
+    src: url('../fonts/worldBlackShadow.ttf');
+}
+
+body{
+	background-color: black;
+	background-size: 100%;
+	margin:0px 0px 0px 0px;
+	font-family: robotoblack;
+}
+
+body p{	
+	color:white;
+}
+
+a:link{
+	text-decoration: none;
+	color:black;
+}
+
+a:visited {
+    text-decoration: none;    
+	color:black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#overall{
+	position:absolute;
+	height:100%;
+	width:100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#load_screen{
+	background: #000;
+	opacity:1;
+	position:fixed;
+	z-index: 10;
+	top:0px;
+	width:100%;
+	height:100%;
+}
+
+#loading{
+	color:#FFF;
+	width:100%;
+	height:100%;
+	margin:auto;
+	font-family: robotoblack;
+	font-size: 100px;
+}
+
+#header{
+	position:fixed;
+	top:0px;
+}
+
+#searchicon{
+	position:absolute;
+	top:0px;
+	text-align: center;
+}
+
+#pagecontentbox{
+	position:fixed;
+	width:100%;
+	overflow:scroll;
+	overflow-x: hidden; 
+	background-color: white;
+}
+
+#search form{
+	height:100%;
+}
+
+#mapArea{
+	border: solid 1px black;
+	height: 100%;
+	width: 100%;
+}
+
+#footer{
+	position:fixed;
+	bottom:0px;
+}
+
+.block{
+	background-color: black;
+	color:red;
+	float:left;
+}
+
+.tab{	
+	background-color: black;
+	color:red;
+	float:left;
+}
+
+.vertAlign{	
+	display: -webkit-flex;
+	display:         flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.left{
+	text-align: left;
+}
+.centered{
+	text-align: center;
+}
+.right{
+	text-align: right;
+}
+
+::-webkit-scrollbar{
+	width:15px;
+  	background-color: black;
+  /*background:transparent;*/
+}
+::-webkit-scrollbar-thumb{
+  background-color: #470000;
+  /*background:transparent;*/
+}
+::-webkit-input-placeholder {
+   font-size: 15px;
+   text-align: center;
+}

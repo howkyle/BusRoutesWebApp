@@ -1,0 +1,75 @@
+[
+	{
+		"busID":"0001",
+		"location":{lat:18.018381, lng:-76.781849},
+		"driverName":"Jim Jones",
+		"route":{"routeNum": "72", "routeName":"August Town to HWT via Mona Rd and Hope Road "},
+		"busStatus":"1"
+	},
+
+	{
+		"busID":"0002",
+		"location":{lat:18.026161, lng:-76.822323},
+		"driverName":"",
+		"route":{"routeNum": "47", "routeName":"Chancery Street to City via Molynes Rd"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0003",
+		"location":{lat:18.020666, lng:-76.812811},
+		"driverName":"",
+		"route":{"routeNum": "47", "routeName":"Chancery Street to City via Molynes Rd"},
+		"busStatus":""
+	},
+	{
+		"busID":"0004",
+		"location":{lat:18.015999, -76.787030},
+		"driverName":"",
+		"route":{"routeNum": "75", "routeName":"6 Miles to HWT via Molynes Rd"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0005",
+		"location":{lat:18.015259, lng:-76.788277},
+		"driverName":"",
+		"route":{"routeNum": "900", "routeName":"HWT to Papine"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0006",
+		"location": {lat: 18.019879, lng:-76.778378},
+		"driverName":"",
+		"route":{"routeNum": "900", "routeName":"HWT to Papine"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0007",
+		"location":{lat:18.007130, lng:-76.813283},
+		"driverName":"",
+		"route":{"routeNum": "51", "routeName":"Three Miles to HWT"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0008",
+		"location":{lat:18.009704,lng: -76.799868},
+		"driverName":"",
+		"route":{"routeNum": "51", "routeName":"Three Miles to HWT"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0009",
+		"location":{lat:18.013929, lng: -76.757122},
+		"driverName":"",
+		"route":{"routeNum": "72", "routeName":"August Town to HWT via Mona Rd and Hope Road "},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0010",
+		"location":{lat:18.019149, lng:-76.763934},
+		"driverName":"",
+		"route":{"routeNum": "72", "routeName":"August Town to HWT via Mona Rd and Hope Road "},
+		"busStatus":"1"
+	}
+
+
+]
