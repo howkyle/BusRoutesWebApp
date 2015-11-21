@@ -138,7 +138,7 @@ $(document).ready(function(){
 		var geocoder = new google.maps.Geocoder();
 		var cached = false
 		var index;
-		destination = document.getElementById("destInput").value.toUpperCase();
+		destination = document.getElementById("destInput").value.toUpperCase()+" JAMAICA";
 
 		for(var i =0;i<recentPlaces.length;i++){
 			if(recentPlaces[i].name ==destination){
