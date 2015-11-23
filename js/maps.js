@@ -70,7 +70,6 @@ $(document).ready(function(){
 			routeBuses.forEach(function(routeBus){
 
 				if(bus.route.routeNum == routeBus){
-				console.log(bus)
 				var info = "<h5>ID: "+bus.busID+"</h5>"+  "<h5>Driver: "+bus.drivername+"</h5>" + "<h5>Route: "+bus.route.routeName +"</h5>";
 				var infoWindow = new google.maps.InfoWindow({ content: info});
 				var marker = new google.maps.Marker({
@@ -129,11 +128,9 @@ $(document).ready(function(){
 			if (status == google.maps.DirectionsStatus.OK) {
 			  // Display the route on the map.
 			  directionsDisplay.setDirections(response);
-			  console.log(response)
 			  directionsList.push(directionsDisplay);
 
 			  var routes = directionsDisplay.getDirections().routes;
-			  console.log(routes)
 			  routes.forEach(function(route){
 			  	 var steps =route.legs[0].steps
 			  	 steps.forEach(function(step){
