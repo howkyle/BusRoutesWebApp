@@ -52,13 +52,8 @@ $(document).ready(function(){
 
 
 	function initMap() { //initializes the map and centres it on the city of kingston
-		var centre;
-		if(currentLocation != null){
-			centre = currentLocation;
-		}
-		else{
-			centre = {lat: 18.0115495, lng: -76.7980512};
-		}
+		var centre = {lat: 18.0115495, lng: -76.7980512};
+
 	  map = new google.maps.Map(document.getElementById('mapArea'), {
 	    center: centre,
 	    zoom: 12
@@ -75,12 +70,16 @@ $(document).ready(function(){
 			routeBuses.forEach(function(routeBus){
 
 				if(bus.route.routeNum == routeBus){
+				console.log(bus)
+				var info = "<h5>ID: "+bus.busID+"</h5>"+  "<h5>Driver: "+bus.drivername+"</h5>" + "<h5>Route: "+bus.route.routeName +"</h5>";
+				var infoWindow = new google.maps.InfoWindow({ content: info});
 				var marker = new google.maps.Marker({
 				icon: "../images/bus_icon.png",
 			    map: map,
 			    position: bus.location,
 			    title: "Bus ID: "+bus.busID+ " Route Number: "+bus.route.routeNum
   			   });
+				marker.addListener('click', function() {infoWindow.open(map, marker);});
 				busMarkers.push(marker);
 			}	
 
@@ -191,13 +190,13 @@ $(document).ready(function(){
 		  
 	}
 
-	var addToList = function(location){ //adds each new location to a dropdown list 
-		var op = new Option();
-			op.text = location.name;
-			op.value =location.location;
-			recentList.options.add(op);
-		document.getElementById("dropDown").appendChild(recentList);
-	}
+	// var addToList = function(location){ //adds each new location to a dropdown list 
+	// 	var op = new Option();
+	// 		op.text = location.name;
+	// 		op.value =location.location;
+	// 		recentList.options.add(op);
+	// 	document.getElementById("dropDown").appendChild(recentList);
+	// }
 	
 
   initMap();

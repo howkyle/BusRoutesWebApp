@@ -106,28 +106,28 @@
 		"busStatus":"1"
 	},
 	{
-		"busID":"0016",
+		"busID":"0017",
 		"location":{"lat":18.000312, "lng": -76.747142},
 		"driverName":"",
 		"route":{"routeNum": "66", "routeName":"Hermitage to City via South Camp Road, Mona Road"},
 		"busStatus":"2"
 	},
 	{
-		"busID":"0016",
+		"busID":"0018",
 		"location":{"lat":17.985578, "lng":-76.790876},
 		"driverName":"",
 		"route":{"routeNum": "44", "routeName":"Great House Circle to HWT"},
 		"busStatus":"1"
 	},
 	{
-		"busID":"0016",
+		"busID":"0019",
 		"location":{"lat":18.005818, "":-76.775846},
 		"driverName":"",
 		"route":{"routeNum": "61", "routeName":"Gordon Town to City"},
 		"busStatus":"1"
 	},
 	{
-		"busID":"0016",
+		"busID":"0020",
 		"location":{"lat":17.972495, "lng":-76.844261},
 		"driverName":"",
 		"route":{"routeNum": "18A", "routeName":"Greater Portmore to HWT via Braeton Road, Portmore Toll Road, Hagley Park Road"},
