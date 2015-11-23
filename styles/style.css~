@@ -23,7 +23,7 @@
 }
 
 #header{
-	position:fixed;
+	position:absolute;
 	top:0%;
 	height:10%;
 	color:white;
@@ -33,7 +33,7 @@
 }
 
 #searchbar{	
-	position:fixed;
+	position:absolute;
 	top:10%;
 	height:10%;
 	padding-left: 5px;
@@ -52,14 +52,14 @@ input{
 button{
 	background-color: #002a54; 
 	height:100%;
-	width:33%;
+	width:49%;
 	padding:0px 0px 0px 0px;
 	border:none;
 	border-left: 5px solid black;
 }
 
 #searchbuttons{	
-	position:fixed;
+	position:absolute;
 	top:10%;
 	left:33.3%;
 	height:10%;
@@ -80,7 +80,7 @@ button{
 }
 
 #footer{
-	position:fixed;
+	position:absolute;
 	top:90%;
 	height:10%;
 	color:white;
@@ -96,4 +96,8 @@ button{
 	align-items: center;
 	-webkit-justify-content: center;
 	justify-content: center;
+}
+
+.centered{
+	text-align: center;
 }
