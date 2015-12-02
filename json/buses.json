@@ -132,6 +132,47 @@
 		"driverName":"",
 		"route":{"routeNum": "18A", "routeName":"Greater Portmore to HWT via Braeton Road, Portmore Toll Road, Hagley Park Road"},
 		"busStatus":"1"
+	},
+	{
+		"busID":"0021",
+		"location":{"lat":18.015859, "lng":-76.758558},
+		"driverName":"Jim Bob",
+		"route":{"routeNum": "66", "routeName":"Hermtage to City via Mona Road, South Camp Road"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0022",
+		"location":{"lat":17.982108, "lng":-76.779818},
+		"driverName":"Bob Jim",
+		"route":{"routeNum": "66", "routeName":"Hermtage to City via Mona Road, South Camp Road"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0023",
+		"location":{"lat":18.025344, "lng":-76.820656},
+		"driverName":"John Archer",
+		"route":{"routeNum": "32B", "routeName":"Half Way Tree (North Odeon) to Duhaney Park via Washington Boulevard, Dunrobin Avenue"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0024",
+		"location":{"lat":18.025262, "lng":-76.831041},
+		"driverName":"John Archer",
+		"route":{"routeNum": "32B", "routeName":"Half Way Tree (North Odeon) to Duhaney Park via Washington Boulevard, Dunrobin Avenue"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0025",
+		"location":{"lat":18.010360, "lng":-76.742401},
+		"driverName":"Axle Witsel",
+		"route":{"routeNum": "68", "routeName":"Irvine Hall to City via Hope Pastures, Old Hope Road, Cross Roads"},
+		"busStatus":"1"
+	},
+	{
+		"busID":"0026",
+		"location":{"lat":17.974114, "lng":-76.792869},
+		"driverName":"Vincent Kompany",
+		"route":{"routeNum": "68", "routeName":"Irvine Hall to City via Hope Pastures, Old Hope Road, Cross Roads"},
+		"busStatus":"1"
 	}
 ]
-
